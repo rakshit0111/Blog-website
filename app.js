@@ -12,10 +12,7 @@ const Blog = require("./models/blog");
 const app = express();
 const PORT = process.env.PORT||8000;
 
-mongoose.connect(process.env.MONGO_URL,{
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).
+mongoose.connect(process.env.MONGO_URL).
 then(()=>{console.log("MongoDb connected")})
 .catch((err)=>{console.log("MongoDb could'nt connect",err)});
 
